@@ -810,7 +810,7 @@ var CONFIG = {
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-  var placeholder = CONFIG.JAVA_IP === "bigbootsmp.my.pebble.host" || !CONFIG.JAVA_IP;
+  var placeholder = !CONFIG.JAVA_IP || CONFIG.JAVA_IP === "deine-server-ip";
 
   /* Fill in config */
   $$('[data-cfg]').forEach(function (el) { var v = CONFIG[el.getAttribute('data-cfg')]; if (v) el.textContent = v; });
